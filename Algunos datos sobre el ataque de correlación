@@ -1,0 +1,904 @@
+Archivos necesarios para ejecutar el ataque:
+  - distancia_VaultsCA
+  - Vault2Minutiaes
+  - Generar_Comb
+  - Lagrange_Poly_iter
+  - Generar_llave
+  - CRC_res
+
+Para muestras 105_1 - 105_2:
+  Prueba1:
+    Tiempo = (Total time: 5346.805s/89.1134m/1.48hrs/1hr29hrs)
+    min_dist = 2250
+    rotattempts = 1000
+    maxmp = 30 %Maximo numero de puntos con distancia < min_dist en 1 o n rotaciones de las rotattempts realizdas
+    maxmpidx = 2 %numero de rotaciones con maxmp coincidentes;
+    transattempts = 20000;
+    trans_dist_iter = 500
+    puntos_coincidentes_chaff_mas_real = 30
+    puntos_reales_enc = 11
+    combs = 14307150.0
+
+  Prueba2:
+    Tiempo = (Total time: 3346.0008s/ 55.7667mins/ 0.9295hrs/ 0hr 55mins)
+    min_dist = 2000
+    rotattempts = 1000
+    maxmp =  25 %Maximo numero de puntos con distancia < min_dist en 1 o n rotaciones de las rotattempts realizdas
+    maxmpidx =  2 %numero de rotaciones con maxmp coincidentes;
+    transattempts = 20000;
+    trans_dist_iter = 500
+    puntos_coincidentes_chaff_mas_real = 25
+    puntos_reales_enc = 10
+    combs = 2042975.0
+
+    Prueba3: No paso por que hay menos de n+1 puntos reales
+      Tiempo = (Total time: 3249.426s/ 54.1571mins/ 0.9026hrs/ 0hr 54mins)
+      min_dist = 1750
+      rotattempts = 1000
+      maxmp =  22 %Maximo numero de puntos con distancia < min_dist en 1 o n rotaciones de las rotattempts realizdas
+      maxmpidx =  2 %numero de rotaciones con maxmp coincidentes;
+      transattempts = 20000;
+      trans_dist_iter = 500
+      puntos_coincidentes_chaff_mas_real = 22
+      puntos_reales_enc = 8
+      combs = 497420.0
+
+      Prueba4:
+        Tiempo = (Total time: 1715.624s/ 28.5973mins/ 0.4766hrs/ 0hr 28mins)
+        min_dist = 1850
+        rotattempts = 1000
+        maxmp =  25 %Maximo numero de puntos con distancia < min_dist en 1 o n rotaciones de las rotattempts realizdas
+        maxmpidx =  1 %numero de rotaciones con maxmp coincidentes;
+        transattempts = 20000;
+        trans_dist_iter = 500
+        puntos_coincidentes_chaff_mas_real = 25
+        puntos_reales_enc = 9
+        combs = 2042975.0
+
+        Prueba5:
+          Tiempo = (Total time: 1871.001s/ 0.5595mins/ 0.5197hrs/ 0hr 31mins)
+          min_dist = 1800
+          rotattempts = 1000
+          maxmp =  24 %Maximo numero de puntos con distancia < min_dist en 1 o n rotaciones de las rotattempts realizdas
+          maxmpidx =  1 %numero de rotaciones con maxmp coincidentes;
+          transattempts = 20000;
+          trans_dist_iter = 500
+          puntos_coincidentes_chaff_mas_real = 24
+          puntos_reales_enc = 9
+          combs = 1307504.0
+
+          Prueba6:
+            Tiempo = (Total time: 21241s)
+            min_dist = 2000
+            rotattempts = 1000
+            maxmp =  25 %Maximo numero de puntos con distancia < min_dist en 1 o n rotaciones de las rotattempts realizdas
+            maxmpidx =  2 %numero de rotaciones con maxmp coincidentes;
+            transattempts = sin transición
+            trans_dist_iter = 500
+            puntos_coincidentes_chaff_mas_real = 25
+            puntos_reales_enc = 10
+            combs = 1307504.0
+
+
+  ########### Pensar en correr una si y una no...############ Ademas de lo de la probabilidad de que yo digo que en medio hay mas!###########
+############################################################################
+%%%%%%%%%% Pruebas solo con rotaciones. min dist = 2250;
+
+Los puntos genuinos entre 101_1 y 101_2 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_3 encontrados son: 5 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_4 encontrados son: 4 de entre 18 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_5 encontrados son: 6 de entre 20 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_6 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_7 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_8 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_3 encontrados son: 8 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_4 encontrados son: 6 de entre 20 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_5 encontrados son: 5 de entre 19 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_6 encontrados son: 5 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_7 encontrados son: 3 de entre 25 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_8 encontrados son: 5 de entre 20 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_4 encontrados son: 3 de entre 53 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_5 encontrados son: 4 de entre 54 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_6 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_7 encontrados son: 4 de entre 25 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_8 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_5 encontrados son: 1 de entre 51 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_6 encontrados son: 1 de entre 21 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_7 encontrados son: 2 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_8 encontrados son: 2 de entre 20 en total coincidentes.
+Los puntos genuinos entre 101_5 y 101_6 encontrados son: 4 de entre 21 en total coincidentes.
+Los puntos genuinos entre 101_5 y 101_7 encontrados son: 3 de entre 24 en total coincidentes.
+Los puntos genuinos entre 101_5 y 101_8 encontrados son: 1 de entre 19 en total coincidentes.
+Los puntos genuinos entre 101_6 y 101_7 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 101_6 y 101_8 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_7 y 101_8 encontrados son: 9 de entre 24 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_2 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_3 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_4 encontrados son: 11 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_5 encontrados son: 5 de entre 21 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_6 encontrados son: 11 de entre 27 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_7 encontrados son: 9 de entre 22 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_8 encontrados son: 11 de entre 22 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_3 encontrados son: 2 de entre 20 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_4 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_5 encontrados son: 9 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_6 encontrados son: 4 de entre 25 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_7 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_8 encontrados son: 3 de entre 20 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_4 encontrados son: 5 de entre 20 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_5 encontrados son: 3 de entre 18 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_6 encontrados son: 6 de entre 20 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_7 encontrados son: 6 de entre 18 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_8 encontrados son: 3 de entre 18 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_5 encontrados son: 7 de entre 57 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_6 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_7 encontrados son: 7 de entre 19 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_8 encontrados son: 4 de entre 18 en total coincidentes.
+Los puntos genuinos entre 102_5 y 102_6 encontrados son: 3 de entre 22 en total coincidentes.
+Los puntos genuinos entre 102_5 y 102_7 encontrados son: 3 de entre 17 en total coincidentes.
+Los puntos genuinos entre 102_5 y 102_8 encontrados son: 3 de entre 16 en total coincidentes.
+Los puntos genuinos entre 102_6 y 102_7 encontrados son: 6 de entre 56 en total coincidentes.
+Los puntos genuinos entre 102_6 y 102_8 encontrados son: 5 de entre 55 en total coincidentes.
+Los puntos genuinos entre 102_7 y 102_8 encontrados son: 2 de entre 52 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_2 encontrados son: 7 de entre 24 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_3 encontrados son: 10 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_4 encontrados son: 5 de entre 22 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_5 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_6 encontrados son: 9 de entre 23 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_7 encontrados son: 6 de entre 29 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_8 encontrados son: 5 de entre 22 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_3 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_4 encontrados son: 9 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_5 encontrados son: 7 de entre 21 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_6 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_7 encontrados son: 5 de entre 24 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_8 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_4 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_5 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_6 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_7 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_8 encontrados son: 4 de entre 24 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_5 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_6 encontrados son: 3 de entre 26 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_7 encontrados son: 5 de entre 21 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_8 encontrados son: 4 de entre 17 en total coincidentes.
+Los puntos genuinos entre 103_5 y 103_6 encontrados son: 8 de entre 22 en total coincidentes.
+Los puntos genuinos entre 103_5 y 103_7 encontrados son: 9 de entre 29 en total coincidentes.
+Los puntos genuinos entre 103_5 y 103_8 encontrados son: 2 de entre 22 en total coincidentes.
+Los puntos genuinos entre 103_6 y 103_7 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 103_6 y 103_8 encontrados son: 4 de entre 23 en total coincidentes.
+Los puntos genuinos entre 103_7 y 103_8 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_2 encontrados son: 13 de entre 30 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_3 encontrados son: 14 de entre 32 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_4 encontrados son: 12 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_5 encontrados son: 8 de entre 26 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_6 encontrados son: 13 de entre 29 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_7 encontrados son: 12 de entre 29 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_8 encontrados son: 14 de entre 33 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_3 encontrados son: 8 de entre 33 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_4 encontrados son: 15 de entre 27 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_5 encontrados son: 10 de entre 26 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_6 encontrados son: 12 de entre 33 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_7 encontrados son: 10 de entre 32 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_8 encontrados son: 11 de entre 35 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_4 encontrados son: 14 de entre 32 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_5 encontrados son: 11 de entre 26 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_6 encontrados son: 15 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_7 encontrados son: 12 de entre 30 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_8 encontrados son: 17 de entre 34 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_5 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_6 encontrados son: 9 de entre 26 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_7 encontrados son: 11 de entre 30 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_8 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 104_5 y 104_6 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 104_5 y 104_7 encontrados son: 9 de entre 26 en total coincidentes.
+Los puntos genuinos entre 104_5 y 104_8 encontrados son: 10 de entre 25 en total coincidentes.
+Los puntos genuinos entre 104_6 y 104_7 encontrados son: 16 de entre 27 en total coincidentes.
+Los puntos genuinos entre 104_6 y 104_8 encontrados son: 22 de entre 39 en total coincidentes.
+Los puntos genuinos entre 104_7 y 104_8 encontrados son: 14 de entre 30 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_2 encontrados son: 11 de entre 30 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_3 encontrados son: 4 de entre 21 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_4 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_5 encontrados son: 11 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_6 encontrados son: 7 de entre 21 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_7 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_8 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_3 encontrados son: 8 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_4 encontrados son: 7 de entre 22 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_5 encontrados son: 11 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_6 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_7 encontrados son: 11 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_8 encontrados son: 3 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_4 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_5 encontrados son: 6 de entre 22 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_6 encontrados son: 3 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_7 encontrados son: 5 de entre 26 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_8 encontrados son: 3 de entre 20 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_5 encontrados son: 9 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_6 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_7 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_8 encontrados son: 3 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_5 y 105_6 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 105_5 y 105_7 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_5 y 105_8 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 105_6 y 105_7 encontrados son: 3 de entre 19 en total coincidentes.
+Los puntos genuinos entre 105_6 y 105_8 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 105_7 y 105_8 encontrados son: 13 de entre 23 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_2 encontrados son: 13 de entre 31 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_3 encontrados son: 7 de entre 29 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_4 encontrados son: 10 de entre 27 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_5 encontrados son: 15 de entre 28 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_6 encontrados son: 9 de entre 28 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_7 encontrados son: 10 de entre 28 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_8 encontrados son: 8 de entre 26 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_3 encontrados son: 16 de entre 37 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_4 encontrados son: 17 de entre 33 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_5 encontrados son: 18 de entre 31 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_6 encontrados son: 13 de entre 34 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_7 encontrados son: 11 de entre 31 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_8 encontrados son: 11 de entre 30 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_4 encontrados son: 16 de entre 28 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_5 encontrados son: 13 de entre 32 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_6 encontrados son: 9 de entre 33 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_7 encontrados son: 16 de entre 31 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_8 encontrados son: 12 de entre 28 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_5 encontrados son: 8 de entre 29 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_6 encontrados son: 9 de entre 31 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_7 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_8 encontrados son: 4 de entre 24 en total coincidentes.
+Los puntos genuinos entre 106_5 y 106_6 encontrados son: 12 de entre 36 en total coincidentes.
+Los puntos genuinos entre 106_5 y 106_7 encontrados son: 13 de entre 32 en total coincidentes.
+Los puntos genuinos entre 106_5 y 106_8 encontrados son: 13 de entre 32 en total coincidentes.
+Los puntos genuinos entre 106_6 y 106_7 encontrados son: 13 de entre 26 en total coincidentes.
+Los puntos genuinos entre 106_6 y 106_8 encontrados son: 15 de entre 24 en total coincidentes.
+Los puntos genuinos entre 106_7 y 106_8 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_2 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_3 encontrados son: 5 de entre 22 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_4 encontrados son: 4 de entre 23 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_5 encontrados son: 3 de entre 22 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_6 encontrados son: 5 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_7 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_8 encontrados son: 4 de entre 20 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_3 encontrados son: 2 de entre 23 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_4 encontrados son: 9 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_5 encontrados son: 5 de entre 30 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_6 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_7 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_8 encontrados son: 7 de entre 22 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_4 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_5 encontrados son: 9 de entre 23 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_6 encontrados son: 9 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_7 encontrados son: 4 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_8 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_5 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_6 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_7 encontrados son: 11 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_8 encontrados son: 6 de entre 22 en total coincidentes.
+Los puntos genuinos entre 107_5 y 107_6 encontrados son: 7 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_5 y 107_7 encontrados son: 7 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_5 y 107_8 encontrados son: 5 de entre 22 en total coincidentes.
+Los puntos genuinos entre 107_6 y 107_7 encontrados son: 8 de entre 28 en total coincidentes.
+Los puntos genuinos entre 107_6 y 107_8 encontrados son: 9 de entre 21 en total coincidentes.
+Los puntos genuinos entre 107_7 y 107_8 encontrados son: 9 de entre 59 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_2 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_3 encontrados son: 12 de entre 32 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_4 encontrados son: 14 de entre 30 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_5 encontrados son: 11 de entre 32 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_6 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_7 encontrados son: 13 de entre 33 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_8 encontrados son: 14 de entre 30 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_3 encontrados son: 10 de entre 25 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_4 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_5 encontrados son: 11 de entre 25 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_6 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_7 encontrados son: 11 de entre 26 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_8 encontrados son: 11 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_4 encontrados son: 9 de entre 33 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_5 encontrados son: 12 de entre 29 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_6 encontrados son: 11 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_7 encontrados son: 12 de entre 32 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_8 encontrados son: 7 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_5 encontrados son: 9 de entre 32 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_6 encontrados son: 10 de entre 30 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_7 encontrados son: 12 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_8 encontrados son: 14 de entre 33 en total coincidentes.
+Los puntos genuinos entre 108_5 y 108_6 encontrados son: 13 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_5 y 108_7 encontrados son: 7 de entre 30 en total coincidentes.
+Los puntos genuinos entre 108_5 y 108_8 encontrados son: 14 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_6 y 108_7 encontrados son: 13 de entre 32 en total coincidentes.
+Los puntos genuinos entre 108_6 y 108_8 encontrados son: 14 de entre 33 en total coincidentes.
+Los puntos genuinos entre 108_7 y 108_8 encontrados son: 13 de entre 30 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_2 encontrados son: 3 de entre 21 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_3 encontrados son: 5 de entre 25 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_4 encontrados son: 2 de entre 20 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_5 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_6 encontrados son: 3 de entre 20 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_7 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_8 encontrados son: 5 de entre 21 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_3 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_4 encontrados son: 7 de entre 22 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_5 encontrados son: 7 de entre 28 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_6 encontrados son: 9 de entre 20 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_7 encontrados son: 11 de entre 27 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_8 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_4 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_5 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_6 encontrados son: 5 de entre 19 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_7 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_8 encontrados son: 5 de entre 27 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_5 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_6 encontrados son: 1 de entre 18 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_7 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_8 encontrados son: 7 de entre 21 en total coincidentes.
+Los puntos genuinos entre 109_5 y 109_6 encontrados son: 4 de entre 54 en total coincidentes.
+Los puntos genuinos entre 109_5 y 109_7 encontrados son: 10 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_5 y 109_8 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 109_6 y 109_7 encontrados son: 3 de entre 19 en total coincidentes.
+Los puntos genuinos entre 109_6 y 109_8 encontrados son: 2 de entre 21 en total coincidentes.
+Los puntos genuinos entre 109_7 y 109_8 encontrados son: 6 de entre 22 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_2 encontrados son: 1 de entre 20 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_3 encontrados son: 3 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_4 encontrados son: 4 de entre 18 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_5 encontrados son: 7 de entre 24 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_6 encontrados son: 3 de entre 20 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_7 encontrados son: 5 de entre 22 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_8 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_3 encontrados son: 2 de entre 20 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_4 encontrados son: 3 de entre 19 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_5 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_6 encontrados son: 2 de entre 20 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_7 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_8 encontrados son: 2 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_4 encontrados son: 5 de entre 20 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_5 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_6 encontrados son: 3 de entre 21 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_7 encontrados son: 4 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_8 encontrados son: 5 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_5 encontrados son: 4 de entre 27 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_6 encontrados son: 3 de entre 22 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_7 encontrados son: 5 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_8 encontrados son: 4 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_5 y 110_6 encontrados son: 9 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_5 y 110_7 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_5 y 110_8 encontrados son: 7 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_6 y 110_7 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 110_6 y 110_8 encontrados son: 10 de entre 21 en total coincidentes.
+Los puntos genuinos entre 110_7 y 110_8 encontrados son: 6 de entre 20 en total coincidentes.
+El total de casos que tendría exito es: 98
+las bóvedas que al compararse tendria exito el ataque son:
+
+ca_ex =
+
+  98×2 string array
+
+    "101_7"    "101_8"
+    "102_1"    "102_4"
+    "102_1"    "102_6"
+    "102_1"    "102_7"
+    "102_1"    "102_8"
+    "102_2"    "102_5"
+    "103_1"    "103_3"
+    "103_1"    "103_6"
+    "103_2"    "103_4"
+    "103_5"    "103_7"
+    "103_6"    "103_7"
+    "104_1"    "104_2"
+    "104_1"    "104_3"
+    "104_1"    "104_4"
+    "104_1"    "104_6"
+    "104_1"    "104_7"
+    "104_1"    "104_8"
+    "104_2"    "104_4"
+    "104_2"    "104_5"
+    "104_2"    "104_6"
+    "104_2"    "104_7"
+    "104_2"    "104_8"
+    "104_3"    "104_4"
+    "104_3"    "104_5"
+    "104_3"    "104_6"
+    "104_3"    "104_7"
+    "104_3"    "104_8"
+    "104_4"    "104_6"
+    "104_4"    "104_7"
+    "104_4"    "104_8"
+    "104_5"    "104_7"
+    "104_5"    "104_8"
+    "104_6"    "104_7"
+    "104_6"    "104_8"
+    "104_7"    "104_8"
+    "105_1"    "105_2"
+    "105_1"    "105_5"
+    "105_2"    "105_5"
+    "105_2"    "105_7"
+    "105_4"    "105_5"
+    "105_7"    "105_8"
+    "106_1"    "106_2"
+    "106_1"    "106_4"
+    "106_1"    "106_5"
+    "106_1"    "106_6"
+    "106_1"    "106_7"
+    "106_2"    "106_3"
+    "106_2"    "106_4"
+    "106_2"    "106_5"
+    "106_2"    "106_6"
+    "106_2"    "106_7"
+    "106_2"    "106_8"
+    "106_3"    "106_4"
+    "106_3"    "106_5"
+    "106_3"    "106_6"
+    "106_3"    "106_7"
+    "106_3"    "106_8"
+    "106_4"    "106_6"
+    "106_5"    "106_6"
+    "106_5"    "106_7"
+    "106_5"    "106_8"
+    "106_6"    "106_7"
+    "106_6"    "106_8"
+    "107_2"    "107_4"
+    "107_3"    "107_4"
+    "107_3"    "107_5"
+    "107_3"    "107_6"
+    "107_4"    "107_7"
+    "107_6"    "107_8"
+    "107_7"    "107_8"
+    "108_1"    "108_3"
+    "108_1"    "108_4"
+    "108_1"    "108_5"
+    "108_1"    "108_6"
+    "108_1"    "108_7"
+    "108_1"    "108_8"
+    "108_2"    "108_3"
+    "108_2"    "108_5"
+    "108_2"    "108_7"
+    "108_2"    "108_8"
+    "108_3"    "108_4"
+    "108_3"    "108_5"
+    "108_3"    "108_6"
+    "108_3"    "108_7"
+    "108_4"    "108_5"
+    "108_4"    "108_6"
+    "108_4"    "108_7"
+    "108_4"    "108_8"
+    "108_5"    "108_6"
+    "108_5"    "108_8"
+    "108_6"    "108_7"
+    "108_6"    "108_8"
+    "108_7"    "108_8"
+    "109_2"    "109_6"
+    "109_2"    "109_7"
+    "109_5"    "109_7"
+    "110_5"    "110_6"
+    "110_6"    "110_8"
+
+##################################################################################
+%%%%%%%%%% Pruebas solo con rotaciones, min dist = 2500;
+
+Los puntos genuinos entre 101_1 y 101_2 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_3 encontrados son: 5 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_4 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_5 encontrados son: 4 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_6 encontrados son: 4 de entre 29 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_7 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_1 y 101_8 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_3 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_4 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_5 encontrados son: 3 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_6 encontrados son: 4 de entre 28 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_7 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_2 y 101_8 encontrados son: 6 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_4 encontrados son: 3 de entre 53 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_5 encontrados son: 5 de entre 55 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_6 encontrados son: 10 de entre 28 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_7 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 101_3 y 101_8 encontrados son: 4 de entre 25 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_5 encontrados son: 1 de entre 51 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_6 encontrados son: 1 de entre 24 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_7 encontrados son: 2 de entre 25 en total coincidentes.
+Los puntos genuinos entre 101_4 y 101_8 encontrados son: 2 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_5 y 101_6 encontrados son: 0 de entre 23 en total coincidentes.
+Los puntos genuinos entre 101_5 y 101_7 encontrados son: 3 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_5 y 101_8 encontrados son: 1 de entre 22 en total coincidentes.
+Los puntos genuinos entre 101_6 y 101_7 encontrados son: 11 de entre 31 en total coincidentes.
+Los puntos genuinos entre 101_6 y 101_8 encontrados son: 8 de entre 26 en total coincidentes.
+Los puntos genuinos entre 101_7 y 101_8 encontrados son: 8 de entre 26 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_2 encontrados son: 11 de entre 32 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_3 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_4 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_5 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_6 encontrados son: 10 de entre 31 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_7 encontrados son: 9 de entre 26 en total coincidentes.
+Los puntos genuinos entre 102_1 y 102_8 encontrados son: 10 de entre 27 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_3 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_4 encontrados son: 10 de entre 29 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_5 encontrados son: 10 de entre 26 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_6 encontrados son: 5 de entre 28 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_7 encontrados son: 6 de entre 24 en total coincidentes.
+Los puntos genuinos entre 102_2 y 102_8 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_4 encontrados son: 3 de entre 22 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_5 encontrados son: 7 de entre 21 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_6 encontrados son: 4 de entre 24 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_7 encontrados son: 4 de entre 21 en total coincidentes.
+Los puntos genuinos entre 102_3 y 102_8 encontrados son: 5 de entre 21 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_5 encontrados son: 8 de entre 58 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_6 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_7 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 102_4 y 102_8 encontrados son: 4 de entre 23 en total coincidentes.
+Los puntos genuinos entre 102_5 y 102_6 encontrados son: 3 de entre 25 en total coincidentes.
+Los puntos genuinos entre 102_5 y 102_7 encontrados son: 3 de entre 21 en total coincidentes.
+Los puntos genuinos entre 102_5 y 102_8 encontrados son: 0 de entre 19 en total coincidentes.
+Los puntos genuinos entre 102_6 y 102_7 encontrados son: 7 de entre 57 en total coincidentes.
+Los puntos genuinos entre 102_6 y 102_8 encontrados son: 6 de entre 56 en total coincidentes.
+Los puntos genuinos entre 102_7 y 102_8 encontrados son: 2 de entre 52 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_2 encontrados son: 10 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_3 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_4 encontrados son: 12 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_5 encontrados son: 3 de entre 26 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_6 encontrados son: 11 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_7 encontrados son: 8 de entre 33 en total coincidentes.
+Los puntos genuinos entre 103_1 y 103_8 encontrados son: 13 de entre 24 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_3 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_4 encontrados son: 10 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_5 encontrados son: 9 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_6 encontrados son: 7 de entre 30 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_7 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_2 y 103_8 encontrados son: 8 de entre 30 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_4 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_5 encontrados son: 8 de entre 26 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_6 encontrados son: 8 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_7 encontrados son: 7 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_3 y 103_8 encontrados son: 5 de entre 27 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_5 encontrados son: 7 de entre 29 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_6 encontrados son: 3 de entre 30 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_7 encontrados son: 2 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_4 y 103_8 encontrados son: 5 de entre 20 en total coincidentes.
+Los puntos genuinos entre 103_5 y 103_6 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 103_5 y 103_7 encontrados son: 10 de entre 34 en total coincidentes.
+Los puntos genuinos entre 103_5 y 103_8 encontrados son: 3 de entre 25 en total coincidentes.
+Los puntos genuinos entre 103_6 y 103_7 encontrados son: 11 de entre 33 en total coincidentes.
+Los puntos genuinos entre 103_6 y 103_8 encontrados son: 9 de entre 28 en total coincidentes.
+Los puntos genuinos entre 103_7 y 103_8 encontrados son: 7 de entre 24 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_2 encontrados son: 16 de entre 36 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_3 encontrados son: 18 de entre 39 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_4 encontrados son: 15 de entre 36 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_5 encontrados son: 11 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_6 encontrados son: 14 de entre 33 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_7 encontrados son: 13 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_1 y 104_8 encontrados son: 15 de entre 37 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_3 encontrados son: 10 de entre 36 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_4 encontrados son: 13 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_5 encontrados son: 11 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_6 encontrados son: 16 de entre 37 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_7 encontrados son: 12 de entre 35 en total coincidentes.
+Los puntos genuinos entre 104_2 y 104_8 encontrados son: 11 de entre 38 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_4 encontrados son: 17 de entre 33 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_5 encontrados son: 14 de entre 29 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_6 encontrados son: 13 de entre 34 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_7 encontrados son: 13 de entre 34 en total coincidentes.
+Los puntos genuinos entre 104_3 y 104_8 encontrados son: 19 de entre 39 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_5 encontrados son: 7 de entre 29 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_6 encontrados son: 12 de entre 30 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_7 encontrados son: 12 de entre 32 en total coincidentes.
+Los puntos genuinos entre 104_4 y 104_8 encontrados son: 12 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_5 y 104_6 encontrados son: 9 de entre 29 en total coincidentes.
+Los puntos genuinos entre 104_5 y 104_7 encontrados son: 10 de entre 30 en total coincidentes.
+Los puntos genuinos entre 104_5 y 104_8 encontrados son: 10 de entre 30 en total coincidentes.
+Los puntos genuinos entre 104_6 y 104_7 encontrados son: 12 de entre 31 en total coincidentes.
+Los puntos genuinos entre 104_6 y 104_8 encontrados son: 21 de entre 45 en total coincidentes.
+Los puntos genuinos entre 104_7 y 104_8 encontrados son: 15 de entre 33 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_2 encontrados son: 11 de entre 33 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_3 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_4 encontrados son: 10 de entre 29 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_5 encontrados son: 12 de entre 28 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_6 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_7 encontrados son: 6 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_1 y 105_8 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_3 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_4 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_5 encontrados son: 12 de entre 32 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_6 encontrados son: 9 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_7 encontrados son: 4 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_2 y 105_8 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_4 encontrados son: 7 de entre 32 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_5 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_6 encontrados son: 4 de entre 25 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_7 encontrados son: 5 de entre 29 en total coincidentes.
+Los puntos genuinos entre 105_3 y 105_8 encontrados son: 3 de entre 24 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_5 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_6 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_7 encontrados son: 3 de entre 30 en total coincidentes.
+Los puntos genuinos entre 105_4 y 105_8 encontrados son: 2 de entre 29 en total coincidentes.
+Los puntos genuinos entre 105_5 y 105_6 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 105_5 y 105_7 encontrados son: 10 de entre 32 en total coincidentes.
+Los puntos genuinos entre 105_5 y 105_8 encontrados son: 6 de entre 27 en total coincidentes.
+Los puntos genuinos entre 105_6 y 105_7 encontrados son: 2 de entre 22 en total coincidentes.
+Los puntos genuinos entre 105_6 y 105_8 encontrados son: 4 de entre 28 en total coincidentes.
+Los puntos genuinos entre 105_7 y 105_8 encontrados son: 10 de entre 26 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_2 encontrados son: 11 de entre 35 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_3 encontrados son: 10 de entre 34 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_4 encontrados son: 12 de entre 32 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_5 encontrados son: 17 de entre 32 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_6 encontrados son: 9 de entre 30 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_7 encontrados son: 11 de entre 33 en total coincidentes.
+Los puntos genuinos entre 106_1 y 106_8 encontrados son: 10 de entre 31 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_3 encontrados son: 17 de entre 43 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_4 encontrados son: 19 de entre 37 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_5 encontrados son: 19 de entre 37 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_6 encontrados son: 15 de entre 41 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_7 encontrados son: 16 de entre 35 en total coincidentes.
+Los puntos genuinos entre 106_2 y 106_8 encontrados son: 14 de entre 38 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_4 encontrados son: 9 de entre 34 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_5 encontrados son: 15 de entre 36 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_6 encontrados son: 9 de entre 37 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_7 encontrados son: 21 de entre 37 en total coincidentes.
+Los puntos genuinos entre 106_3 y 106_8 encontrados son: 16 de entre 33 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_5 encontrados son: 9 de entre 33 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_6 encontrados son: 9 de entre 34 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_7 encontrados son: 11 de entre 27 en total coincidentes.
+Los puntos genuinos entre 106_4 y 106_8 encontrados son: 7 de entre 28 en total coincidentes.
+Los puntos genuinos entre 106_5 y 106_6 encontrados son: 12 de entre 37 en total coincidentes.
+Los puntos genuinos entre 106_5 y 106_7 encontrados son: 18 de entre 39 en total coincidentes.
+Los puntos genuinos entre 106_5 y 106_8 encontrados son: 14 de entre 35 en total coincidentes.
+Los puntos genuinos entre 106_6 y 106_7 encontrados son: 6 de entre 30 en total coincidentes.
+Los puntos genuinos entre 106_6 y 106_8 encontrados son: 10 de entre 27 en total coincidentes.
+Los puntos genuinos entre 106_7 y 106_8 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_2 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_3 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_4 encontrados son: 6 de entre 27 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_5 encontrados son: 5 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_6 encontrados son: 7 de entre 32 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_7 encontrados son: 9 de entre 31 en total coincidentes.
+Los puntos genuinos entre 107_1 y 107_8 encontrados son: 4 de entre 21 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_3 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_4 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_5 encontrados son: 5 de entre 33 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_6 encontrados son: 8 de entre 30 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_7 encontrados son: 8 de entre 29 en total coincidentes.
+Los puntos genuinos entre 107_2 y 107_8 encontrados son: 8 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_4 encontrados son: 10 de entre 29 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_5 encontrados son: 10 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_6 encontrados son: 11 de entre 29 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_7 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 107_3 y 107_8 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_5 encontrados son: 8 de entre 29 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_6 encontrados son: 8 de entre 29 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_7 encontrados son: 9 de entre 31 en total coincidentes.
+Los puntos genuinos entre 107_4 y 107_8 encontrados son: 7 de entre 24 en total coincidentes.
+Los puntos genuinos entre 107_5 y 107_6 encontrados son: 7 de entre 28 en total coincidentes.
+Los puntos genuinos entre 107_5 y 107_7 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 107_5 y 107_8 encontrados son: 6 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_6 y 107_7 encontrados son: 10 de entre 31 en total coincidentes.
+Los puntos genuinos entre 107_6 y 107_8 encontrados son: 9 de entre 25 en total coincidentes.
+Los puntos genuinos entre 107_7 y 107_8 encontrados son: 10 de entre 60 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_2 encontrados son: 11 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_3 encontrados son: 12 de entre 37 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_4 encontrados son: 13 de entre 34 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_5 encontrados son: 14 de entre 36 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_6 encontrados son: 15 de entre 32 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_7 encontrados son: 14 de entre 36 en total coincidentes.
+Los puntos genuinos entre 108_1 y 108_8 encontrados son: 12 de entre 34 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_3 encontrados son: 12 de entre 30 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_4 encontrados son: 9 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_5 encontrados son: 11 de entre 28 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_6 encontrados son: 10 de entre 30 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_7 encontrados son: 8 de entre 31 en total coincidentes.
+Los puntos genuinos entre 108_2 y 108_8 encontrados son: 14 de entre 40 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_4 encontrados son: 11 de entre 36 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_5 encontrados son: 14 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_6 encontrados son: 12 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_7 encontrados son: 10 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_3 y 108_8 encontrados son: 8 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_5 encontrados son: 9 de entre 37 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_6 encontrados son: 13 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_7 encontrados son: 14 de entre 37 en total coincidentes.
+Los puntos genuinos entre 108_4 y 108_8 encontrados son: 18 de entre 40 en total coincidentes.
+Los puntos genuinos entre 108_5 y 108_6 encontrados son: 15 de entre 37 en total coincidentes.
+Los puntos genuinos entre 108_5 y 108_7 encontrados son: 10 de entre 34 en total coincidentes.
+Los puntos genuinos entre 108_5 y 108_8 encontrados son: 15 de entre 33 en total coincidentes.
+Los puntos genuinos entre 108_6 y 108_7 encontrados son: 12 de entre 35 en total coincidentes.
+Los puntos genuinos entre 108_6 y 108_8 encontrados son: 16 de entre 36 en total coincidentes.
+Los puntos genuinos entre 108_7 y 108_8 encontrados son: 15 de entre 36 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_2 encontrados son: 5 de entre 25 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_3 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_4 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_5 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_6 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_7 encontrados son: 9 de entre 25 en total coincidentes.
+Los puntos genuinos entre 109_1 y 109_8 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_3 encontrados son: 10 de entre 29 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_4 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_5 encontrados son: 7 de entre 30 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_6 encontrados son: 10 de entre 24 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_7 encontrados son: 11 de entre 29 en total coincidentes.
+Los puntos genuinos entre 109_2 y 109_8 encontrados son: 9 de entre 29 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_4 encontrados son: 4 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_5 encontrados son: 7 de entre 26 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_6 encontrados son: 6 de entre 21 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_7 encontrados son: 5 de entre 33 en total coincidentes.
+Los puntos genuinos entre 109_3 y 109_8 encontrados son: 7 de entre 30 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_5 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_6 encontrados son: 3 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_7 encontrados son: 6 de entre 29 en total coincidentes.
+Los puntos genuinos entre 109_4 y 109_8 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 109_5 y 109_6 encontrados son: 5 de entre 55 en total coincidentes.
+Los puntos genuinos entre 109_5 y 109_7 encontrados son: 10 de entre 29 en total coincidentes.
+Los puntos genuinos entre 109_5 y 109_8 encontrados son: 10 de entre 29 en total coincidentes.
+Los puntos genuinos entre 109_6 y 109_7 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 109_6 y 109_8 encontrados son: 2 de entre 21 en total coincidentes.
+Los puntos genuinos entre 109_7 y 109_8 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_2 encontrados son: 1 de entre 24 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_3 encontrados son: 5 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_4 encontrados son: 4 de entre 20 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_5 encontrados son: 8 de entre 27 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_6 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_7 encontrados son: 6 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_1 y 110_8 encontrados son: 4 de entre 22 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_3 encontrados son: 2 de entre 24 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_4 encontrados son: 6 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_5 encontrados son: 7 de entre 30 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_6 encontrados son: 2 de entre 27 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_7 encontrados son: 8 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_2 y 110_8 encontrados son: 3 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_4 encontrados son: 5 de entre 23 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_5 encontrados son: 9 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_6 encontrados son: 9 de entre 24 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_7 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 110_3 y 110_8 encontrados son: 6 de entre 28 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_5 encontrados son: 5 de entre 29 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_6 encontrados son: 3 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_7 encontrados son: 6 de entre 29 en total coincidentes.
+Los puntos genuinos entre 110_4 y 110_8 encontrados son: 4 de entre 26 en total coincidentes.
+Los puntos genuinos entre 110_5 y 110_6 encontrados son: 7 de entre 27 en total coincidentes.
+Los puntos genuinos entre 110_5 y 110_7 encontrados son: 9 de entre 30 en total coincidentes.
+Los puntos genuinos entre 110_5 y 110_8 encontrados son: 7 de entre 25 en total coincidentes.
+Los puntos genuinos entre 110_6 y 110_7 encontrados son: 9 de entre 31 en total coincidentes.
+Los puntos genuinos entre 110_6 y 110_8 encontrados son: 8 de entre 24 en total coincidentes.
+Los puntos genuinos entre 110_7 y 110_8 encontrados son: 7 de entre 24 en total coincidentes.
+El total de casos que tendría exito es: 123
+las bóvedas que al compararse tendria exito el ataque son:
+
+ca_ex =
+
+  123×2 string array
+
+    "101_3"    "101_6"
+    "101_6"    "101_7"
+    "102_1"    "102_2"
+    "102_1"    "102_6"
+    "102_1"    "102_7"
+    "102_1"    "102_8"
+    "102_2"    "102_4"
+    "102_2"    "102_5"
+    "103_1"    "103_2"
+    "103_1"    "103_4"
+    "103_1"    "103_6"
+    "103_1"    "103_8"
+    "103_2"    "103_3"
+    "103_2"    "103_4"
+    "103_2"    "103_5"
+    "103_5"    "103_7"
+    "103_6"    "103_7"
+    "103_6"    "103_8"
+    "104_1"    "104_2"
+    "104_1"    "104_3"
+    "104_1"    "104_4"
+    "104_1"    "104_5"
+    "104_1"    "104_6"
+    "104_1"    "104_7"
+    "104_1"    "104_8"
+    "104_2"    "104_3"
+    "104_2"    "104_4"
+    "104_2"    "104_5"
+    "104_2"    "104_6"
+    "104_2"    "104_7"
+    "104_2"    "104_8"
+    "104_3"    "104_4"
+    "104_3"    "104_5"
+    "104_3"    "104_6"
+    "104_3"    "104_7"
+    "104_3"    "104_8"
+    "104_4"    "104_6"
+    "104_4"    "104_7"
+    "104_4"    "104_8"
+    "104_5"    "104_6"
+    "104_5"    "104_7"
+    "104_5"    "104_8"
+    "104_6"    "104_7"
+    "104_6"    "104_8"
+    "104_7"    "104_8"
+    "105_1"    "105_2"
+    "105_1"    "105_4"
+    "105_1"    "105_5"
+    "105_1"    "105_6"
+    "105_2"    "105_5"
+    "105_2"    "105_6"
+    "105_5"    "105_7"
+    "105_7"    "105_8"
+    "106_1"    "106_2"
+    "106_1"    "106_3"
+    "106_1"    "106_4"
+    "106_1"    "106_5"
+    "106_1"    "106_6"
+    "106_1"    "106_7"
+    "106_1"    "106_8"
+    "106_2"    "106_3"
+    "106_2"    "106_4"
+    "106_2"    "106_5"
+    "106_2"    "106_6"
+    "106_2"    "106_7"
+    "106_2"    "106_8"
+    "106_3"    "106_4"
+    "106_3"    "106_5"
+    "106_3"    "106_6"
+    "106_3"    "106_7"
+    "106_3"    "106_8"
+    "106_4"    "106_5"
+    "106_4"    "106_6"
+    "106_4"    "106_7"
+    "106_5"    "106_6"
+    "106_5"    "106_7"
+    "106_5"    "106_8"
+    "106_6"    "106_8"
+    "107_1"    "107_7"
+    "107_3"    "107_4"
+    "107_3"    "107_5"
+    "107_3"    "107_6"
+    "107_4"    "107_7"
+    "107_6"    "107_7"
+    "107_6"    "107_8"
+    "107_7"    "107_8"
+    "108_1"    "108_2"
+    "108_1"    "108_3"
+    "108_1"    "108_4"
+    "108_1"    "108_5"
+    "108_1"    "108_6"
+    "108_1"    "108_7"
+    "108_1"    "108_8"
+    "108_2"    "108_3"
+    "108_2"    "108_4"
+    "108_2"    "108_5"
+    "108_2"    "108_6"
+    "108_2"    "108_8"
+    "108_3"    "108_4"
+    "108_3"    "108_5"
+    "108_3"    "108_6"
+    "108_3"    "108_7"
+    "108_4"    "108_5"
+    "108_4"    "108_6"
+    "108_4"    "108_7"
+    "108_4"    "108_8"
+    "108_5"    "108_6"
+    "108_5"    "108_7"
+    "108_5"    "108_8"
+    "108_6"    "108_7"
+    "108_6"    "108_8"
+    "108_7"    "108_8"
+    "109_1"    "109_7"
+    "109_2"    "109_3"
+    "109_2"    "109_6"
+    "109_2"    "109_7"
+    "109_2"    "109_8"
+    "109_5"    "109_7"
+    "109_5"    "109_8"
+    "110_3"    "110_5"
+    "110_3"    "110_6"
+    "110_5"    "110_7"
+    "110_6"    "110_7"
+###########################################################################
+Promedio de intentos que tendrían exito. En estos experimentos solo se ocupo
+rotacion para encontrar el mejor alineado entre bóvedas correlacionadas.
+Para todos los experiementos se compararon entre ai las huellas que
+se sabe pertenecen a la misma persona. por lo cual para el conjunto de Huellas
+de cada usuario, que son 8 por usuario de 10 usuarios distintos se tienen 28 combinaciones
+de huellas diferentes del mismo que comparar, en total se hacen 28 comparaciones por
+usuario de 10 usuarios, se hacen entonces 280 comparaciones en total, para cada experimentos
+donde lo que varia es la distancia utilizada, en este caso con pura rotación se utilizaron
+únicamente 10 metricas de distancia distinta. Para cacular los casos de exito solo se ocupen lo que salienron de mas de 10 en cada experimento.
+
+Distancias         |
+Encontrados T prom |
+Encontrados G prom |
+Casos exitosos     |
+Intentos prom      |
+
+
+    	                       save('ResCorr10mindist250trans.mat','resultados')
