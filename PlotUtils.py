@@ -39,19 +39,19 @@ def donutPlot(data, recipe, title = False,png = False, pdf = False, legend = Tru
         if not legend:
             ax.annotate(recipe[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
                     horizontalalignment=horizontalalignment, **kw)
-    
+
     if legend:
         ax.legend(wedges, recipe,
                   title= title,
                   loc="center left",
                   bbox_to_anchor=(1, 0, 0.5, 1))
-        
-    if png: 
+
+    if png:
         plt.savefig(png + '.png', transparent=True)
     if pdf:
         plt.savefig(pdf + '.pdf', transparent=True)
     plt.show()
-    
+
 def groupedBarPlot(data, xticks, title,legend=True,axislabels = False,width=0.35,figsize=(25,10), png = False, pdf = False, colors = None, lg = False, fsizes = False, adBL=False, xtick_rot = False, axisLim = False):
     """Width recomendado para 2 barras agrupadas es 0.35, para 3 y 4 es 0.2"""
     if fsizes:
@@ -66,11 +66,11 @@ def groupedBarPlot(data, xticks, title,legend=True,axislabels = False,width=0.35
             elif key == 'legend':
                 plt.rc(key, fontsize=size)
             elif key == 'figure':
-                plt.rc(key, titlesize=size)  
+                plt.rc(key, titlesize=size)
     else:
         plt.rc('font', size=15)
-    
-    x = np.arange(len(xticks)) 
+
+    x = np.arange(len(xticks))
     if colors:
         cl = colors
     else:
@@ -80,7 +80,7 @@ def groupedBarPlot(data, xticks, title,legend=True,axislabels = False,width=0.35
         fig, ax = plt.subplots(figsize=figsize)
     else:
         fig, ax = plt.subplots()
-    
+
     rects = {}
     if lg:
         ldata = list(data.values())
@@ -117,32 +117,32 @@ def groupedBarPlot(data, xticks, title,legend=True,axislabels = False,width=0.35
     if axislabels:
         ax.set_xlabel(axislabels[0])
         ax.set_ylabel(axislabels[1])
-        
+
     if axisLim:
         for key,values in axisLim.items():
             if key == 'xlim':
                 plt.xlim(values[0], values[1])
             elif key == 'ylim':
                 plt.ylim(values[0], values[1])
-        
+
     ax.set_title(title)
     if len(data) == 3:
         ax.set_xticks(x+width)
     else:
         ax.set_xticks(x)
-        
+
     if lg:
         ax.set_xticks(x)
     if xtick_rot:
-        ax.set_xticklabels(xticks, rotation = 90)
+        ax.set_xticklabels(xticks, rotation = xtick_rot)
     else:
         ax.set_xticklabels(xticks)
-    
+
     if legend:
         ax.legend(prop={"size":30})
     if lg:
         ax.legend(prop={"size":30})
-    
+
     if adBL:
         for i in rects.values():
             ax.bar_label(i, padding=3, labels = [str(round(i, adBL)) for i in ldata[0]])
@@ -151,14 +151,14 @@ def groupedBarPlot(data, xticks, title,legend=True,axislabels = False,width=0.35
             ax.bar_label(i, padding=3)
 
     fig.tight_layout()
-    
-    if png: 
+
+    if png:
         plt.savefig(png + '.png', transparent=True)
     if pdf:
         plt.savefig(pdf + '.pdf', transparent=True)
 
     plt.show()
-    
+
 LW = 0.3
 
 def polar2xy(r, theta):
@@ -384,7 +384,7 @@ def plot_confusion_matrix(cm, classes, normalize=False,colors = None):
     thresh = cm.max()/2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
 #         print(j, i, format(cm[i, j]), fmt)
-        plt.text(j, i, format(cm[i, j], fmt),horizontalalignment="center", 
+        plt.text(j, i, format(cm[i, j], fmt),horizontalalignment="center",
                  color="white" if cm[i, j] > thresh else "black")
     plt.tight_layout()
     plt.ylabel('Clase Verdadera, yt')
